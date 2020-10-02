@@ -23,9 +23,17 @@ class OrdersController < ApplicationController
         order = Order.find_by(id: params[:id])
     end
 
+    def update
+        order_ing = OrdersIngredients.create(order_id: params[:id], ingredient_id: params[:ingredient_id])
+        order = Order.find(params[:order_id])
+        total_price = order.ingredients.reduce(0) {|sum, ingredient | sum + ingredient.price }
+        order.update(total_price: total_price.round(2))
+        render json: order
+    end
+
     private 
     def order_params
-        params.require(:order).permit(:total_price)
+        params.require(:order).permit(:total_price, :ingredient)
     end
 
 end

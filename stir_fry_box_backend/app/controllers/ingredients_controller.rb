@@ -12,7 +12,7 @@ class IngredientsController < ApplicationController
 
     private
     def ingredients_params
-        params.require(:ingredients).permit(:name, :quantity, :price, :category)
+        params.require(:ingredients).permit(:name, :quantity, :price, :category, :order_id, :id)
     end
 
 end
