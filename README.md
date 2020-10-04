@@ -1,24 +1,17 @@
-# README
+# Stir Crazy Stir Fry
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Make your own stir fry bowl eCommerce SPA. Ruby on Rails API backend with JavaScript frontend.
 
-Things you may want to cover:
+Installation Guide
 
-* Ruby version
+- Clone this repo and cd into \_backend
+- Run Bundle Install
+- rails db:create
+- rails db:migrate
+- rails db:seed
+- rails s to start server
 
-* System dependencies
+- Cd into \_frontend
+- Open index.html
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Open developer tools to really get a feel for how the app works!
