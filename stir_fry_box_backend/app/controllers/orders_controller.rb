@@ -13,6 +13,8 @@ class OrdersController < ApplicationController
         order = Order.new(order_params)
         if order 
             order.save
+            total_price = order.ingredients.reduce(0) {|sum, ingredient | sum + ingredient.price }
+            order.update(total_price: total_price.round(2))
             render json: order
         else
             render json: {error: "Error"}
@@ -33,7 +35,7 @@ class OrdersController < ApplicationController
 
     private 
     def order_params
-        params.require(:order).permit(:total_price, :ingredient)
+        params.require(:order).permit(:total_price, ingredient_ids:[])
     end
 
 end

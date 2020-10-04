@@ -1,16 +1,88 @@
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  background-image: url("assets/main-bg-img.jpeg");
+  background-repeat: no-repeat;
+  background-size: 110%;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+/* center all h1 */
 h1 {
   text-align: center;
 }
 
+/* display none */
+#modify-order-form,
+#back,
+#modify-order,
+#order-container {
+  display: none;
+}
+
+/* main styles */
+#main {
+  margin-top: 25%;
+}
+
+#main h1 {
+  color: white;
+  font-size: xxx-large;
+}
+
+/* user-selection styles */
+#user-selection {
+  margin-top: 5%;
+  text-align: center;
+}
+
+/* button styles */
+button,
+#form-submit-button {
+  color: white;
+  background-color: red;
+  padding: 1%;
+  border-radius: 7%;
+  border: none;
+  font-size: 1.2em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#new {
+  margin-right: 2%;
+}
+
+/* container styles */
 #container {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* modify order form styles */
+#modify-order-form {
+  margin-left: 21%;
+}
+
+/* user container styles */
+#user-container {
+  display: flex;
+}
+
+/* ingredients-container styles */
+#ingredients-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+#ingredients-contaniner > .card {
+  flex: 0 50%;
 }
 
 .card {
@@ -20,6 +92,8 @@ h1 {
   margin-right: 2%;
   margin-top: 2%;
   justify-content: center;
+  background-color: white;
+  padding: 1%;
 }
 
 .add-button-container {
@@ -39,4 +113,49 @@ h1 {
 
 #add:hover {
   cursor: pointer;
+}
+
+/* order-container styles */
+#order-container {
+  padding: 0% 10%;
+}
+
+/* new order styles */
+#new-order,
+#modify-order {
+  display: block;
+  width: 300%;
+  margin-left: -95%;
+}
+
+.selected-ingredients,
+.order-total,
+.order-number,
+.modify-order-info,
+.order-info {
+  font-weight: 300;
+  font-size: large;
+  text-align: center;
+  margin-top: 6%;
+}
+
+.order-number {
+  margin-top: 10%;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* modify order styles */
+.order-info {
+  margin-left: -10%;
+}
+
+.order-info h3 {
+  text-decoration: underline;
+}
+
+/* submit order button styles */
+#submit-order {
+  padding: 2%;
+  margin-left: 35%;
 }

@@ -18,19 +18,18 @@ class ApiAdapter {
     }).then((res) => res.json());
   }
 
-  //   updateBowlWithIngredient(bowlId) {
-  //     return fetch(`${this.baseUrl}/bowls/${bowlId}`, {
-  //       method: "PATCH",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Accept: "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         //quantity:
-  //         // bowl_id: bowlId,
-  //         // ingredient_id: ingredient.id,
-  //       }),
-  //     }).then((res) => res.json());
-  //     console.log(bowlId);
-  //   }
+  getOrderById(orderId) {
+    return fetch(`${this.baseUrl}/orders/${orderId}`).then((res) => res.json());
+  }
+
+  updateOrderWithIngredient(orderId) {
+    return fetch(`${this.baseUrl}/orders/${orderId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ order: orderId }).then((res) => res.json()),
+    });
+  }
 }

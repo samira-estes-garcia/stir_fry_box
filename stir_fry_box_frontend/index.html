@@ -7,12 +7,39 @@
     <title>Stir Crazy Stir Fry</title>
   </head>
   <body>
+    <div id="main">
+      <h1>Welcome to Stir Crazy Stir Fry!</h1>
+      <div id="user-selection">
+        <button id="new">New Order</button>
+        <button id="modify">Modify Order</button>
+      </div>
+    </div>
+    <button id="back">Back</button>
     <div id="container">
       <h1>Ingredient List</h1>
-    </div>
-    <div id="order-container">
-      <h1>Place Order</h1>
-      <button id="submit-order">Submit</button>
+      <div id="user-container">
+        <div id="ingredients-container"></div>
+      <div id="order-container">
+        <div id="new-order">
+          <h1 id="new-order-h1">Place Order</h1>
+          <button id="submit-order">Submit</button>
+        </div>
+        <div id="modify-order">
+            <form id="modify-order-form">
+                <!-- <label>Input Order Number</label><br /> -->
+                <input
+                  type="text"
+                  name="order-id"
+                  id="order-id"
+                  placeholder="Input your order number"
+                  required
+                />
+                <input type="submit" id="form-submit-button" />
+              </form>
+          <h1 id="modify-order-h1">Modify Order</h1>
+          <button id="submit-order">Submit</button>
+        </div>
+      </div>
     </div>
     <script src="src/adapters/ApiAdapter.js"></script>
     <script src="src/components/ingredient.js"></script>

@@ -8,8 +8,18 @@ class Ingredient {
   }
 
   collectionOfIngredients() {
+    //select new order container
+    let newOrderH = document.querySelector("#new-order-h1");
+
+    //create selected ingredients div
+    let selectedIngredients = document.createElement("div");
+    selectedIngredients.setAttribute("class", "selected-ingredients");
+
+    //append selected ingredients to order container
+    newOrderH.append(selectedIngredients);
+
     //select #container
-    let ingredientsContainer = document.querySelector("#container");
+    let ingredientsContainer = document.querySelector("#ingredients-container");
 
     //create ingredientCard div
     let ingredientCard = document.createElement("div");
@@ -26,31 +36,27 @@ class Ingredient {
     let ingredientCategory = document.createElement("p");
     ingredientCategory.textContent = `Ingredient Type: ${this.category}`;
 
-    //create add button to add ingredient to cart
+    //create add button to add ingredient to order
     let addBtnDiv = document.createElement("div");
     addBtnDiv.setAttribute("class", "add-button-container");
     let addButton = document.createElement("button");
     addButton.setAttribute("id", "add");
     let obj = this;
     let total_price = 0;
-    let prices = [];
+    // let prices = [];
     addButton.addEventListener("click", function () {
       console.log(`Button ${ingredientCard.dataset.id} was clicked`);
       console.log(`${obj.name} costs ${obj.price}`);
-      //total_price = total_price + obj.price;
+      selectedIngredients.append(`${obj.name} -- ${obj.price}`);
+      total_price = total_price + obj.price;
       let lastOrderCreated = Order.allOrders[Order.allOrders.length - 1];
       lastOrderCreated.ingredient_ids.push(ingredientCard.dataset.id);
-      prices.push(obj.price);
-      console.log(prices);
-      // for (let i = 0; i < lastBowlCreated.ingredient_ids.length; i++) {
-      //   total_price = total_price + ingredientCard.price;
-      //   console.log(total_price);
-      // }
-      //lastBowlCreated.total_price = obj.price;
-      // lastBowlCreated.total_price + ingredientCard.dataset.price;
-      //lastBowlCreated.updateBowl();
+      //   prices.push(total_price);
+      //   console.log(prices);
+      console.log(total_price);
       console.log(lastOrderCreated);
     });
+
     //append ingredientsInfo and addBtn to ingredientCard
     addBtnDiv.append(addButton);
     ingredientsInfo.append(ingredientName);
