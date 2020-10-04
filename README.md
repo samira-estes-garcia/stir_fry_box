@@ -2,7 +2,7 @@
 
 Make your own stir fry bowl eCommerce SPA. Ruby on Rails API backend with JavaScript frontend.
 
-Installation Guide
+<ins>Installation Guide</ins>
 
 - Clone this repo and cd into \_backend
 
